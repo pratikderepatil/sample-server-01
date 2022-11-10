@@ -1,5 +1,8 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const express = require("express");
 const cors = require("cors");
+
 const userRoute = require("./features/user/user.router");
 const productRoute = require("./features/product/product.router");
 const homeRoute = require("./features/home/home.router");
@@ -14,8 +17,7 @@ app.use("/users", userRoute);
 app.use("/products", productRoute);
 app.use("/home", homeRoute);
 app.use("/carts", cartRoute);
-
 app.listen(PORT, async () => {
-	await connect();
+	connect();
 	console.log(`Listening at http://localhost:${PORT}`);
 });
