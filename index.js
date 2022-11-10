@@ -6,7 +6,7 @@ const homeRoute = require("./features/home/home.router");
 const cartRoute = require("./features/cart/cart.router");
 const connect = require("./config/db");
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());
 app.use(cors());
